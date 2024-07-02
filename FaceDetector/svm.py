@@ -102,8 +102,8 @@ def visualize_predictions(images, labels, predictions):
 
 
 # Đường dẫn đến các thư mục
-folder_0_path = '0'  # Thay thế bằng đường dẫn thực tế
-folder_1_path = '1'  # Thay thế bằng đường dẫn thực tế
+folder_0_path = '0'
+folder_1_path = '1'
 
 # Load dữ liệu từ các thư mục
 images, labels = load_images_from_folders([folder_0_path, folder_1_path], [0, 1])
@@ -115,7 +115,7 @@ hog_features = extract_hog_features(images)
 svm, X_test, y_test, y_pred = train_and_evaluate_svm(hog_features, labels)
 
 # Dự đoán trên một ảnh mới
-test_image_path = '0000fcb8ed0ea243.jpg'  # Thay thế bằng đường dẫn đến ảnh kiểm thử
+test_image_path = 'test.jpg'  # Thay thế bằng đường dẫn đến ảnh kiểm thử
 test_image = cv2.imread(test_image_path)
 test_image = cv2.resize(test_image, (128, 128))  # Thay đổi kích thước ảnh kiểm thử về cùng kích thước
 detected_image = detect_faces_humans(test_image, svm)
